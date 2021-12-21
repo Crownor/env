@@ -14,7 +14,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/yihan_g/.oh-my-zsh"
+export ZSH="/Users/Yihan_G/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -36,7 +36,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
 # DISABLE_UPDATE_PROMPT="true"
@@ -80,7 +80,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-proxychains-ng git extract cp zsh_reload git-open z command-not-found safe-paste  zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(zsh-proxychains-ng git extract cp zsh_reload git-open z command-not-found safe-paste   zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -117,61 +117,9 @@ POWERLEVEL9K_MODE="awesome-patched"
 #PATH
 export PATH="/usr/local/opt:$PATH"
 
-
-# Proxy
+# Proxy, But you can use Esc + p to auto add proxychains command to your command
 # export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
 
-# The Fuck
-eval
-            fuck () {
-                TF_PYTHONIOENCODING=$PYTHONIOENCODING;
-                export TF_SHELL=zsh;
-                export TF_ALIAS=fuck;
-                TF_SHELL_ALIASES=$(alias);
-                export TF_SHELL_ALIASES;
-                TF_HISTORY="$(fc -ln -10)";
-                export TF_HISTORY;
-                export PYTHONIOENCODING=utf-8;
-                TF_CMD=$(
-                    thefuck THEFUCK_ARGUMENT_PLACEHOLDER $@
-                ) && eval $TF_CMD;
-                unset TF_HISTORY;
-                export PYTHONIOENCODING=$TF_PYTHONIOENCODING;
-                test -n "$TF_CMD" && print -s $TF_CMD
-            }
-# Homebrew Bottle
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
-export HOMEBREW_NO_AUTO_UPDATE=true
-#export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
-#export PYTHON_CONFIGURE_OPTS="--with-tcltk-includes='-I/usr/local/opt/tcl-tk/include' --with-tcltk-libs='-L/usr/local/opt/tcl-tk/lib -ltcl8.6 -ltk8.6'"
-#export LDFLAGS="-L/usr/local/opt/tcl-tk/lib"
-#export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
-#export PKG_CONFIG_PATH="/usr/local/opt/tcl-tk/lib/pkgconfig"
-
-# TCL/TK
-TKPATH="/usr/local/opt/tcl-tk"
-export LDFLAGS="-L$TKPATH/lib"
-export CPPFLAGS="-I$TKPATH/include"
-export PATH=$PATH:$TKPATH/bin
-
-#NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
-
-# GO 1.14.1
-export GOPATH="/usr/local/Cellar/go/1.14.1"
-export GO111MODULE=on
-export GOPROXY=https://goproxy.io
-
-
-# openJDK
-# export PATH="/usr/local/opt/openjdk/bin:$PATH"
-
-# SSH
-alias ssh-remote="ssh -J Agent"
-alias ssh-tunnel="ssh -D 8080 -C -N Agent"
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -186,18 +134,4 @@ if which pyenv-virtualenv-init > /dev/null;
   then eval "$(pyenv virtualenv-init -)";
 fi
 eval "$(pyenv virtualenv-init -)"
-export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 
-# sourcetree gitlab
-source ~/.iterm2_shell_integration.zsh
-
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
-
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the end of this file.
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-#### END FIG ENV VARIABLES ####
-export PATH="/usr/local/sbin:$PATH"
