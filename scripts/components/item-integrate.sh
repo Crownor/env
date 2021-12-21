@@ -39,6 +39,7 @@ get_params(){
 install(){
 	curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
 	echo "source ~/.iterm2_shell_integration.zsh" >> ~/.zshrc
+	echo "export iterm2_hostname=${HOST}" >> ~/.zshrc
 }
 
 main(){
