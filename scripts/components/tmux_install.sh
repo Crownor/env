@@ -51,7 +51,7 @@ check(){
 install_tmux(){
   if [ "$os" = "centos" ]; then
     # yum上的版本太老，换源装新版
-    curl -L http://galaxy4.net/repo/RHEL/7/noarch/galaxy4-release-7-1.noarch.rpm
+    curl -L http://galaxy4.net/repo/RHEL/7/noarch/galaxy4-release-7-1.noarch.rpm -o  galaxy4-release-7-1.noarch.rpm
     echo $passwd | sudo yum install -y galaxy4-release-7-1.noarch.rpm
     echo $passwd | sudo yum install -y tmux
   elif [ "$os" = "ubuntu" ]; then

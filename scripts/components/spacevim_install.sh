@@ -24,7 +24,7 @@ command_exists() {
 	command -v "$@" >/dev/null 2>&1
 }
 get_params(){
-	ARGS=$(getopt -o p:o: --long passwd:,os: -n 'spacevim.sh' -- "$@")
+	ARGS=$(getopt -o p:o: --long passwd:,os: -n 'spacevim_install.sh' -- "$@")
 	eval set -- "${ARGS}"
 	while [ -n "$1" ]
 	do

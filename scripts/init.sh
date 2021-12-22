@@ -7,7 +7,7 @@ packages=(
 	[pyenv]="https://gitee.com/crownor/env/raw/master/scripts/components/pyenv_install.sh"
 	[item-integrate]="https://gitee.com/crownor/env/raw/master/scripts/components/item-integrate.sh"
 	[tmux]="https://gitee.com/crownor/env/raw/master/scripts/components/tmux_install.sh"
-	[spacevim]="https://gitee.com/crownor/env/raw/master/scripts/components/SpaceVim_install.sh"
+	[spacevim]="https://gitee.com/crownor/env/raw/master/scripts/components/spacevim_install.sh"
 )
 # 通过数组来确保安装的顺序不会变
 declare -a package_name=()
