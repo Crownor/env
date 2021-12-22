@@ -50,6 +50,7 @@ check(){
 is_done(){
   if [ $? -ne 0 ]; then
     fmt_error "安装出现异常，将退出ZSH安装"
+    rm -rf ~/zshtmp
     exit 2
   fi
 }
@@ -74,6 +75,7 @@ install(){
 	    is_done
 	fi
 	echo $passwd | chsh -s /bin/zsh
+	rm -rf ~/zshtmp
 }
 
 main(){
