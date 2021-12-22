@@ -24,7 +24,8 @@ command_exists() {
 	command -v "$@" >/dev/null 2>&1
 }
 get_params(){
-	ARGS=$(getopt -o p:o: --long passwd:,os: -n 'init.sh' -- "$@")
+  ARGS=`getopt  -o p:o: --long passwd:,os: -n 'tmux_install.sh' -- "$@"`
+#	ARGS=$(getopt -o p:o: --long passwd:,os: -n 'init.sh' -- "$@")
 	eval set -- "${ARGS}"
 	while [ -n "$1" ]
 	do
@@ -48,8 +49,12 @@ check(){
 
 install_tmux(){
   if [ "$os" = "centos" ]; then
-    sudo yum install -y tmux
+    # yum上的版本太老，换源装新版
+    curl -L http://galaxy4.net/repo/RHEL/7/noarch/galaxy4-release-7-1.noarch.rpm
+    echo $passwd | sudo yum install -y galaxy4-release-7-1.noarch.rpm
+    echo $passwd | sudo yum install -y tmux
   elif [ "$os" = "ubuntu" ]; then
+    # TODO：未完善
     sudo apt-get install -y tmux
   elif [ "$os" = "mac" ]; then
     brew install tmux

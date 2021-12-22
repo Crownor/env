@@ -24,7 +24,7 @@ command_exists() {
 	command -v "$@" >/dev/null 2>&1
 }
 get_params(){
-	ARGS=$(getopt -o p:o: --long passwd:,os: -n 'init.sh' -- "$@")
+	ARGS=`getopt -o p:o: --long passwd:,os: -n 'zsh_install.sh' -- "$@"`
 	eval set -- "${ARGS}"
 	while [ -n "$1" ]
 	do
@@ -46,18 +46,30 @@ check(){
 	fi
 }
 
+is_done(){
+  if [ $? -ne 0 ]; then
+    fmt_error "安装出现异常，将退出ZSH安装"
+    exit 2
+  fi
+}
+
 install(){
 	if [[ $os == "ubuntu" ]]; then
-	    echo $passwd | sudo apt-get install -y zsh build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+	  echo $passwd | sudo apt-get install -y zsh build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+    is_done
 	elif [[ $os == "centos" ]]; then
 	    echo $passwd | sudo -S yum install -y git make ncurses-devel gcc autoconf man @development zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel findutils
+	    is_done
 	    git clone -b zsh-5.8 https://gitee.com/crownor/zsh.git ~/zshtmp
-	    cd ~/zshtmp
-	    ./Util/preconfig
-	    ./configure
+	    is_done
+	    .~/zshtmp/Util/preconfig
+	    .~/zhstmp/configure
 	    echo $passwd | sudo -S make -j 20 install.bin install.modules install.fns
+	    is_done
 	    echo $passwd | sudo -S ln -s /usr/local/bin/zsh /bin/zsh
+	    is_done
 	    echo $passwd | sudo -S sh -c "echo \"/bin/zsh\" >> /etc/shells"
+	    is_done
 	fi
 	echo $passwd | chsh -s /bin/zsh
 }

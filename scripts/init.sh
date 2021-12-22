@@ -61,7 +61,8 @@ exec_success(){
 }
 
 get_params(){
-	ARGS=$(getopt -o p:o: --long passwd:,os: -n 'init.sh' -- "$@")
+  ARGS=`getopt  -o p:o: --long passwd:,os: -n 'init.sh' -- "$@"`
+#	ARGS=$(getopt -o p:o: --long passwd:,os: -n 'init.sh' -- "$@")
 	eval set -- "${ARGS}"
 	while [ -n "$1" ]
 	do
@@ -72,6 +73,7 @@ get_params(){
 		shift
 	done
 }
+
 
 get_options(){
 	printf "${YELLOW}确定操作系统[centos/ubuntu]: ${RESET}"
