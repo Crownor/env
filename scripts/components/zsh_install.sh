@@ -24,7 +24,8 @@ command_exists() {
 	command -v "$@" >/dev/null 2>&1
 }
 get_params(){
-	ARGS=`getopt -o p:o: --long passwd:,os: -n 'zsh_install.sh' -- "$@"`
+  # Get the parameters
+	ARGS=$(getopt -o p:o: --long passwd:,os: -n 'zsh_install.sh' -- "$@")
 	eval set -- "${ARGS}"
 	while [ -n "$1" ]
 	do

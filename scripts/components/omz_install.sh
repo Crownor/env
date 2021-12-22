@@ -30,7 +30,7 @@ is_done() {
   fi
 }
 get_params() {
-  ARGS=`getopt -o p:o: --long passwd:,os: -n 'omz_install.sh' -- "$@"`
+  ARGS=$(getopt -o p:o: --long passwd:,os: -n 'omz_install.sh' -- "$@")
   eval set -- "${ARGS}"
   while [ -n "$1" ]; do
     case "$1" in
