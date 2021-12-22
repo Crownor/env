@@ -45,7 +45,9 @@ is_done(){
 
 check(){
 	# 这里写判断条件,如果已经安装了则返回1 否则返回0
-	if not command_exists zsh; then
+	if command_exists zsh; then
+	  echo ""
+	else
 	  fmt_error "zsh未安装"
 	  exit 2
   fi
