@@ -69,9 +69,9 @@ install() {
   ./install.py
   git clone --depth=1 https://gitee.com/crownor/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
   # 修改zshrc、主题、插件等
-  curl -fsSL https://gitee.com/crownor/env/zsh/.zshrc >~/.zshrc
+  curl -fsSL https://gitee.com/crownor/env/raw/master/zsh/.zshrc >~/.zshrc
   is_done
-  curl -fsSL https://gitee.com/crownor/env/zsh/.p10k.zsh >~/.p10k.zsh
+  curl -fsSL https://gitee.com/crownor/env/raw/master/zsh/.p10k.zsh >~/.p10k.zsh
   is_done
   #	sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/g' ~/.zshrc
   #	sed -i 's/plugins=(git)/plugins=(git extract zsh-autosuggestions zsh-syntax-highlighting zsh_reload autojump)/g' ~/.zshrc
