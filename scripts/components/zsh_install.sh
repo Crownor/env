@@ -63,8 +63,9 @@ install(){
 	    is_done
 	    git clone -b zsh-5.8 https://gitee.com/crownor/zsh.git ~/zshtmp
 	    is_done
-	    .~/zshtmp/Util/preconfig
-	    .~/zhstmp/configure
+	    cd ~/zshtmp
+	    ./Util/preconfig
+	    ./configure
 	    echo $passwd | sudo -S make -j 20 install.bin install.modules install.fns
 	    is_done
 	    echo $passwd | sudo -S ln -s /usr/local/bin/zsh /bin/zsh
