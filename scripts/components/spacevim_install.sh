@@ -49,11 +49,11 @@ install(){
   # 安装nvim
   if [ "$os" = "centos" ]; then
     sudo yum install -y epel-release
-    sudo yum install -y nvim
+    sudo yum install -y neovim
   elif [ "$os" = "ubuntu" ]; then
-    sudo apt-get install -y nvim
+    sudo apt-get install -y neovim
   elif [ "$os" = "mac" ]; then
-    brew install nvim
+    brew install neovim
   fi
   # 安装spacevim
   curl -sLf https://gitee.com/crownor/env/raw/master/assets/spacevim-install.sh | bash
