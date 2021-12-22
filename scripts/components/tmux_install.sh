@@ -63,8 +63,8 @@ install_tmux(){
 
 prepare_profile(){
   # 配置tmux环境
-  curl -L https://gitee.com/crownor/env/tmux/.tmux.conf > ~/.tmux.conf
-  curl -L https://gitee.com/crownor/env/tmux/.tmux.conf.local > ~/.tmux.conf.local
+  curl -L https://gitee.com/crownor/env/raw/master/tmux/.tmux.conf > ~/.tmux.conf
+  curl -L https://gitee.com/crownor/env/raw/master/tmux/.tmux.conf.local > ~/.tmux.conf.local
 }
 
 main(){

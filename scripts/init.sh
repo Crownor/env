@@ -2,12 +2,12 @@
 # 用来标记具体包下载路径的，会在prepare_packages中使用
 declare -A packages=()
 packages=(
-	[zsh]="https://gitee.com/crownor/env/scripts/components/zsh_install.sh"
-	[oh-my-zsh]="https://gitee.com/crownor/env/scripts/components/omz_install.sh"
-	[pyenv]="https://gitee.com/crownor/env/scripts/components/pyenv_install.sh"
-	[item-integrate]="https://gitee.com/crownor/env/scripts/components/item-integrate.sh"
-	[tmux]="https://gitee.com/crownor/env/scripts/components/tmux_install.sh"
-	[spacevim]="https://gitee.com/crownor/env/scripts/components/SpaceVim_install.sh"
+	[zsh]="https://gitee.com/crownor/env/raw/master/scripts/components/zsh_install.sh"
+	[oh-my-zsh]="https://gitee.com/crownor/env/raw/master/scripts/components/omz_install.sh"
+	[pyenv]="https://gitee.com/crownor/env/raw/master/scripts/components/pyenv_install.sh"
+	[item-integrate]="https://gitee.com/crownor/env/raw/master/scripts/components/item-integrate.sh"
+	[tmux]="https://gitee.com/crownor/env/raw/master/scripts/components/tmux_install.sh"
+	[spacevim]="https://gitee.com/crownor/env/raw/master/scripts/components/SpaceVim_install.sh"
 )
 # 通过数组来确保安装的顺序不会变
 declare -a package_name=()
