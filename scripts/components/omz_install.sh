@@ -43,7 +43,7 @@ get_params() {
 
 is_done(){
   if [ $? -ne 0 ]; then
-    fmt_error "安装出现异常，将退出ZSH安装"
+    fmt_error "安装出现异常，将退出OMZ安装"
     exit 2
   fi
 }
@@ -60,7 +60,7 @@ check() {
 }
 
 install() {
-  sh -c "$(curl https://gitee.com/crownor/env/assets/oh-my-zsh-install-mirror.sh)"
+  sh -c "$(curl https://gitee.com/crownor/env/raw/master/assets/oh-my-zsh-install-mirror.sh)"
   is_done
   git clone https://gitee.com/crownor/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   git clone https://gitee.com/crownor/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting

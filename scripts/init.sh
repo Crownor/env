@@ -129,9 +129,9 @@ prepare_install_options(){
 start_install(){
 	for each in "${package_confirmd[@]}"; do
 		if [ $passwd ]; then
-			curl ${packages[$each]} -o- -L | bash -s --  -o $os -p $passwd
+			curl -fsSL ${packages[$each]} -o- -L | bash -s --  -o $os -p $passwd
 		else
-			curl ${packages[$each]} -o- -L | bash -s --  -o $os
+			curl -fsSL ${packages[$each]} -o- -L | bash -s --  -o $os
 		fi
 		
 		exec_success $each

@@ -60,7 +60,7 @@ install(){
 	  echo $passwd | sudo apt-get install -y zsh build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
     is_done
 	elif [[ $os == "centos" ]]; then
-	    echo $passwd | sudo -S yum install -y git make ncurses-devel gcc autoconf man @development zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel findutils
+	    echo $passwd | sudo -S yum install -y sudo git make ncurses-devel gcc autoconf man @development zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel findutils
 	    is_done
 	    git clone -b zsh-5.8 https://gitee.com/crownor/zsh.git ~/zshtmp
 	    is_done
