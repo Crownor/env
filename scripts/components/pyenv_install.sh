@@ -38,7 +38,7 @@ get_params(){
 
 is_done(){
   if [ $? -ne 0 ]; then
-    fmt_error "安装出现异常，将退出ZSH安装"
+    fmt_error "安装出现异常，将退出Pyenv安装"
     exit 2
   fi
 }
