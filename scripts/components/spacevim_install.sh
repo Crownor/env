@@ -58,8 +58,8 @@ install(){
   # 安装spacevim
   curl -sLf https://gitee.com/crownor/env/raw/master/assets/spacevim-install.sh | bash
   # 配置环境
-  curl -sLf https://gitee.com/crownor/env/raw/master/vim/init.toml  > ~/.SpaceVim.d/init.toml
-  curl -sLf https://gitee.com/crownor/env/raw/master/vim/autoload/myspacevim.vim  > ~/.SpaceVim.d/autoload/myspacevim.vim
+  curl -sLf https://gitee.com/crownor/env/raw/master/vim/.SpaceVim.d/init.toml  > ~/.SpaceVim.d/init.toml
+  curl -sLf https://gitee.com/crownor/env/raw/master/vim/.SpaceVim.d/autoload/myspacevim.vim  > ~/.SpaceVim.d/autoload/myspacevim.vim
   # 安装copilot插件
   git clone https://gitee.com/crownor/copilot.vim.git \
   ~/.SpaceVim.d/plugin/copilot.vim
